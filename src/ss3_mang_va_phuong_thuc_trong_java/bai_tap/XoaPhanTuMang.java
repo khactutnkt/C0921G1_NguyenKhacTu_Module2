@@ -53,7 +53,7 @@ public class XoaPhanTuMang {
             }while (i<array.length);
             System.out.println("Mảng sau khi xóa là ");
             for (int j=0; j<array.length; j++){
-                System.out.print(array[j]+" ");
+                System.out.print(array[j]+"\t");
             }
         }
 
