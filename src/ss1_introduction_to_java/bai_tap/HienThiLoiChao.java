@@ -1,5 +1,6 @@
 package ss1_introduction_to_java.bai_tap;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class HienThiLoiChao {
