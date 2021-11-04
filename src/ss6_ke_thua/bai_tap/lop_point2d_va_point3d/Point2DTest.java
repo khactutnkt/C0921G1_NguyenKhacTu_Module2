@@ -6,5 +6,9 @@ public class Point2DTest {
         System.out.println(point2D);
         point2D.setXY(1.5f,2.2f);
         System.out.println(point2D);
+        Point3D point3D = new Point3D();
+        System.out.println(point3D);
+        point3D.setXYZ(1,1,1);
+        System.out.println(point2D);
     }
 }
