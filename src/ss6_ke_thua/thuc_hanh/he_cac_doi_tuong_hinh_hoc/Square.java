@@ -15,6 +15,7 @@ public class Square extends Rectangle{
     }
     public void setSide(double side){
         this.setWidth(side);
+        this.setHeight(side);
     }
     public String toString(){
         return "A Square with side="
