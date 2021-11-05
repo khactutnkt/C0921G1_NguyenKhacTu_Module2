@@ -22,7 +22,13 @@ public class Circle extends Shape {
         this.radius = radius;
     }
 
-    public double getArea(){
+//    public double getArea(){
+//        return Math.PI*Math.pow(this.radius, 2);
+//    }
+
+
+    @Override
+    public double getArea() {
         return Math.PI*Math.pow(this.radius, 2);
     }
 

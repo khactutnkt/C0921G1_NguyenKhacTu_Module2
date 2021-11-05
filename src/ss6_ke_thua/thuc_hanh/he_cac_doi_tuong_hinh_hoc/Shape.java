@@ -1,6 +1,6 @@
 package ss6_ke_thua.thuc_hanh.he_cac_doi_tuong_hinh_hoc;
 
-public class Shape {
+public abstract class Shape {
     private String color = "green";
     private boolean filled = true;
     public Shape(){
@@ -26,6 +26,7 @@ public class Shape {
         this.filled = filled;
     }
 
+    public abstract double getArea();
     @Override
     public String toString() {
         return "A Shape with color of "+this.getColor()+" and filled: "+this.filled;

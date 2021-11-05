@@ -17,6 +17,12 @@ public class Square extends Rectangle{
         this.setWidth(side);
         this.setHeight(side);
     }
+
+    @Override
+    public double getArea() {
+        return super.getArea();
+    }
+
     public String toString(){
         return "A Square with side="
                 + getSide()

@@ -5,30 +5,29 @@ import ss6_ke_thua.thuc_hanh.he_cac_doi_tuong_hinh_hoc.Shape;
 
 public class Test {
     public static void main(String[] args) {
-        Circle circle = new Circle();
-        System.out.println(circle);
-        circle.resize(10);
-        System.out.println(circle);
+        Shape[] shapes = new Shape[3];
+        shapes[0] = new Circle();
+        shapes[1] = new Rectangle(4,3);
+        shapes[2] = new Square();
+        for (Shape sh : shapes){
+            if (sh instanceof Circle){
+                Circle shape = (Circle) sh;
+                System.out.println("Area before: "+shape.getArea());
+                shape.resize(Math.random()*99 + 1);
+                System.out.println("Area after: "+shape.getArea());
+            }else if (sh instanceof Rectangle){
+                Rectangle shape = (Rectangle) sh;
+                System.out.println("Area before: "+shape.getArea());
+                shape.resize(Math.random()*99 + 1);
+                System.out.println("Area after: "+shape.getArea());
+            }else if (sh instanceof Square){
+                Square shape = (Square) sh;
+                System.out.println("Area before: "+shape.getArea());
+                shape.resize(Math.random()*99 + 1);
+                System.out.println("Area after: "+shape.getArea());
+            }
 
-        System.out.println("------------------");
-        Rectangle rectangle = new Rectangle();
-        System.out.println(rectangle);
-        rectangle.resize(20);
-        System.out.println(rectangle);
-
-        System.out.println("--------------------");
-        Square square = new Square();
-        System.out.println(square);
-        square.resize(30);
-        System.out.println(square);
-
-//        Shape[] shapes = new Shape[3];
-//        shapes[0] = new Circle();
-//        shapes[1] = new Rectangle();
-//        shapes[2] = new Square();
-//        for (Shape sh : shapes){
-//            System.out.println(sh);
-//            sh.resiz
-//        }
+            System.out.println(sh+"\n----------------------------");
+        }
     }
 }

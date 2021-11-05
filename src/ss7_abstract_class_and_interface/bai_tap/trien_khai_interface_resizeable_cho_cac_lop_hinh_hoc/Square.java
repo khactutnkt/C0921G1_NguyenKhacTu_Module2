@@ -4,6 +4,7 @@ public class Square extends ss6_ke_thua.thuc_hanh.he_cac_doi_tuong_hinh_hoc.Squa
 
     @Override
     public void resize(double percent) {
-        this.setSide(this.getSide()*(percent+100)/100);
+        System.out.println("percent: "+percent);
+        this.setSide(this.getSide()*Math.sqrt((percent+100)/100));
     }
 }
