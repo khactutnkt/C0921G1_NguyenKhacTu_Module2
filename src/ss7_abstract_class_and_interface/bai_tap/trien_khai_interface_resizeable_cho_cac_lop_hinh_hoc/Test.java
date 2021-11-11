@@ -26,7 +26,6 @@ public class Test {
                 shape.resize(Math.random()*99 + 1);
                 System.out.println("Area after: "+shape.getArea());
             }
-
             System.out.println(sh+"\n----------------------------");
         }
     }

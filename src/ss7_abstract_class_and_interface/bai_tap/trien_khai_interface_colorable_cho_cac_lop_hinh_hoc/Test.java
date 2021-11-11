@@ -12,25 +12,7 @@ public class Test {
         for (Shape sh : shapes){
             System.out.println(sh);
             System.out.println("Area: "+sh.getArea());
-//            if (sh instanceof Circle1){
-//                System.out.println(sh);
-//                Circle1 shape = (Circle1) sh;
-//                System.out.println("Area: "+shape.getArea());
-//            }
-//            if (sh instanceof Rectangle1){
-//                System.out.println(sh);
-//                Rectangle1 shape = (Rectangle1) sh;
-//                System.out.println("Area: "+shape.getArea());
-//            }
-//            if (sh instanceof Square1){
-//                System.out.println(sh);
-//                Square1 shape = (Square1) sh;
-//                System.out.println("Area: "+shape.getArea());
-//                Colorable colorable = (Square1) sh;
-//                colorable.howToColor();
-//            }
-//            System.out.println(sh);
-//            System.out.println("Area:");
+
             if (sh instanceof Square1){
                 Colorable colorable = (Square1) sh;
                 colorable.howToColor();

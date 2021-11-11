@@ -19,8 +19,5 @@ public class Test {
        for (Fruit fruit : fruits){
            System.out.println(fruit.howToEat());
        }
-
-//       Chicken ch = new Chicken();
-//        System.out.println(ch.howToEat());
     }
 }

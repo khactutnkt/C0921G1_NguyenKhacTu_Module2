@@ -17,3 +17,4 @@ public class DemSoLanXuatHienCuaKyTuTrongChuoi {
         System.out.println("Có "+count+" ký tự "+x+" xuất hiện trong chuỗi "+str);
     }
 }
+
