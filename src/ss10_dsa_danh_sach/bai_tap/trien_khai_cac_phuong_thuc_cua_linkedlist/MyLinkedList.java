@@ -138,7 +138,6 @@ public class MyLinkedList<E> {
         return (E)temp.data;
     }
 
-
     public void printList() {
         Node temp = head;
         while (temp != null) {

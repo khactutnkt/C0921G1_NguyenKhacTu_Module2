@@ -16,10 +16,6 @@ public class Test {
         System.out.println(myLinkedList.getFirst());
         System.out.println(myLinkedList.getLast());
         System.out.println(myLinkedList.remove("tu"));
-        System.out.println(myLinkedList.contains(17));
-        System.out.println(myLinkedList.indexOf(555));
-        System.out.println(myLinkedList.get(5));
-        myLinkedList.add(0,11);
         myLinkedList.remove(0);
         System.out.println("----------------------");
         myLinkedList.printList();
