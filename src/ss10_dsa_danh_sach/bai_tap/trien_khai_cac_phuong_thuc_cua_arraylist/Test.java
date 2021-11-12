@@ -10,8 +10,6 @@ public class Test {
         listInteger.add(2,3);
         listInteger.add(3,4);
         listInteger.add(4,5);
-//        listInteger.add(5,6);
-listInteger.clear();
 
         System.out.println(listInteger.get(0));
         System.out.println(listInteger.get(1));;
