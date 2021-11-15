@@ -57,12 +57,7 @@ public class MyList<E> {
     }
 
     public boolean contains(E o) {
-        for (Object e : elements) {
-            if ((E) e == o) {
-                return true;
-            }
-        }
-        return false;
+        return this.indexOf(o) != -1;
     }
 
     public int indexOf(E o) {
