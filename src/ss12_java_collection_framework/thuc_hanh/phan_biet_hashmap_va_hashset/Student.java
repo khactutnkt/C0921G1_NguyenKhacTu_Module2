@@ -1,4 +1,4 @@
-package ss12.thuc_hanh.phan_biet_hashmap_va_hashset;
+package ss12_java_collection_framework.thuc_hanh.phan_biet_hashmap_va_hashset;
 
 public class Student {
     private String name;
