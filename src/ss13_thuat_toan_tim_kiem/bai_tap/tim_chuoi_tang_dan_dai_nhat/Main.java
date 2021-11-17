@@ -1,5 +1,6 @@
 package ss13_thuat_toan_tim_kiem.bai_tap.tim_chuoi_tang_dan_dai_nhat;
 
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Main {
@@ -7,21 +8,23 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập vào 1 chuỗi: ");
         String string = scanner.nextLine();
-        String result = string.charAt(0)+"";
-        String tempString =result;
-        for (int i = 1; i < string.length(); i++) {
-            if (string.charAt(i) >= string.charAt(i-1)){
-                tempString += string.charAt(i);
-            }else {
-                if (result.length()<=tempString.length()){
-                    result = tempString;
+        LinkedList<Character> result = new LinkedList<>();
+        LinkedList<Character> subString;
+        for (int i = 0; i < string.length(); i++) {
+            subString = new LinkedList<>();
+            subString.add(string.charAt(i));
+            for (int j = i+1; j < string.length(); j++) {
+                if (string.charAt(j) > subString.getLast()){
+                    subString.add(string.charAt(j));
                 }
-                tempString = string.charAt(i)+"";
+            }
+            if (subString.size() > result.size()){
+                result = subString;
             }
         }
-        if (result.length()<=tempString.length()){
-            result = tempString;
+        System.out.print("Chuỗi tăng dần dài nhất: ");
+        for (Character c : result){
+            System.out.print(c);
         }
-        System.out.println("Chuỗi tăng dần dài nhất: "+result);
     }
 }
