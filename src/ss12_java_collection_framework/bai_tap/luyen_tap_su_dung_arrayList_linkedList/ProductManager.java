@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ProductManager {
-    static List<Product> productList = new ArrayList<Product>();
+    private static List<Product> productList = new ArrayList<Product>();
     {
         productList.add(new Product("Asus", "A101", 1500));
         productList.add(new Product("Dell", "D100", 1000));
