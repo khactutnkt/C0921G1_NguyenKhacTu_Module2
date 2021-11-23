@@ -8,6 +8,8 @@ import java.util.Scanner;
 
 public class ExperienceImpl implements CandidateServices {
     static List<Experience> experienceList = new ArrayList<>();
+    public static final String EXPERIENCE_FILE = "D:\\Codegym\\C0921G1_NguyenKhacTu_Module2\\src\\" +
+            "bai_tap_cuoi_tuan_candidate\\file_candidate_list\\experienceListFile";
     static {
         experienceList.add(new Experience("ex01", "Nguyen", "An", 1998, "Da Nang",
                 "033858585","nguyenminh@gmail.com",0,3,"java"));
@@ -18,6 +20,33 @@ public class ExperienceImpl implements CandidateServices {
 
     }
     Scanner scanner = new Scanner(System.in);
+
+//    public void writeExperienceFile(List<Experience> experienceList){
+//        File file = new File(EXPERIENCE_FILE);
+//        FileWriter fileWriter;
+//        BufferedWriter bufferedWriter = null;
+//        for (Experience exp : experienceList) {
+//            try {
+//                fileWriter = new FileWriter(file, true);
+//                bufferedWriter = new BufferedWriter(fileWriter);
+//                bufferedWriter.write(exp.getId() + "," + exp.getFirstName() + "," + exp.getLastName() + "," +
+//                        exp.getBirthDate() + "," + exp.getAddress() + "," + exp.getPhone() + "," +
+//                        exp.getEmail() + "," + exp.getCandidateType() + "," + exp.getExpInYear() + "," +exp.getProSkill() +"\n");
+//                bufferedWriter.flush();
+//            }catch (IOException e){
+//                e.printStackTrace();
+//            }finally {
+//                try {
+//                    if (bufferedWriter != null) {
+//                        bufferedWriter.close();
+//                    }
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }
+//
+//    }
 
     @Override
     public void display() {
@@ -50,6 +79,7 @@ public class ExperienceImpl implements CandidateServices {
         Experience experience = new Experience(id, firstName, lastName, birthDate,
                 address, phone, email, cadidateType,expInYear, proSkill);
         experienceList.add(experience);
+//        writeExperienceFile(experienceList);
 
     }
 

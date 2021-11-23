@@ -33,9 +33,34 @@ public class Main {
         }
     }
 
+    public static final String RESULT_FILE = "D:\\Codegym\\C0921G1_NguyenKhacTu_Module2\\src\\ss16_IO_text_file\\bai_tap\\doc_file_cvs\\result";
+    public static void writeCSV(Country country){
+        File file = new File(RESULT_FILE);
+        FileWriter fileWriter;
+        BufferedWriter bufferedWriter = null;
+        try {
+            fileWriter = new FileWriter(file, true);
+            bufferedWriter = new BufferedWriter(fileWriter);
+            bufferedWriter.write(country.getId() + "," + country.getCode() + "," +country.getName() + "\n");
+            bufferedWriter.flush();
+        }catch (IOException e){
+            e.printStackTrace();
+        }finally {
+            try {
+                if (bufferedWriter != null) {
+                    bufferedWriter.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+
     public static void main(String[] args) {
         readLine();
         for (Country country : countryList) {
+            writeCSV(country);
             System.out.println(country);
         }
     }
