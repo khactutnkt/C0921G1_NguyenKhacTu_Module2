@@ -3,8 +3,10 @@ package models;
 public class Room extends Facility{
     private String dichVuDiKem;
 
-    public Room(String tenDichVu, int dienTichThue, int chiPhiThue, int soLuongNguoi, String kieuThue, String dichVuDiKem) {
-        super(tenDichVu, dienTichThue, chiPhiThue, soLuongNguoi, kieuThue);
+    public Room(){}
+
+    public Room(String maDichVu, String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoi, String kieuThue, String dichVuDiKem) {
+        super(maDichVu, tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoi, kieuThue);
         this.dichVuDiKem = dichVuDiKem;
     }
 

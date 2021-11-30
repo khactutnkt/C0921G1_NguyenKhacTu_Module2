@@ -4,9 +4,10 @@ public class House extends Facility{
     private String tieuChuanPhong;
     private int soTang;
 
-    public House(String tenDichVu, int dienTichThue, int chiPhiThue, int soLuongNguoi,
-                 String kieuThue, String tieuChuanPhong, int soTang) {
-        super(tenDichVu, dienTichThue, chiPhiThue, soLuongNguoi, kieuThue);
+    public House(){}
+
+    public House(String maDichVu, String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoi, String kieuThue, String tieuChuanPhong, int soTang) {
+        super(maDichVu, tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoi, kieuThue);
         this.tieuChuanPhong = tieuChuanPhong;
         this.soTang = soTang;
     }

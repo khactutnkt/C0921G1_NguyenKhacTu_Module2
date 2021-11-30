@@ -29,10 +29,10 @@ public class FuramaController {
                     manageEmployee();
                     break;
                 case 2:
-                    manageFacility();
+                    manageCustomer();
                     break;
                 case 3:
-                    manageCustomer();
+                    manageFacility();
                     break;
                 case 4:
                     manageBooking();
@@ -68,7 +68,7 @@ public class FuramaController {
         }
     }
 
-    public void manageFacility(){
+    public void manageCustomer(){
         System.out.println("Facility Management\n" +
                 "1.\tDisplay list customers\n"+
                 "2.\tAdd new customer\n"+
@@ -90,7 +90,7 @@ public class FuramaController {
         }
     }
 
-    public void manageCustomer(){
+    public void manageFacility(){
         System.out.println("Customer Management\n" +
                 "1\tDisplay list facility\n"+
                 "2\tAdd new facility\n"+

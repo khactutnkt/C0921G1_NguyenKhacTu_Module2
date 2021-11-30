@@ -3,18 +3,30 @@ package models;
 import java.util.Objects;
 
 public abstract class Facility {
+    private String maDichVu;
     private String tenDichVu;
-    private double dienTichThue;
-    private int chiPhiThue;
+    private double dienTichSuDung;
+    private double chiPhiThue;
     private int soLuongNguoi;
     private String kieuThue;
 
-    public Facility(String tenDichVu, int dienTichThue, int chiPhiThue, int soLuongNguoi, String kieuThue) {
+    public Facility(){}
+
+    public Facility(String maDichVu, String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoi, String kieuThue) {
+        this.maDichVu = maDichVu;
         this.tenDichVu = tenDichVu;
-        this.dienTichThue = dienTichThue;
+        this.dienTichSuDung = dienTichSuDung;
         this.chiPhiThue = chiPhiThue;
         this.soLuongNguoi = soLuongNguoi;
         this.kieuThue = kieuThue;
+    }
+
+    public String getMaDichVu() {
+        return maDichVu;
+    }
+
+    public void setMaDichVu(String maDichVu) {
+        this.maDichVu = maDichVu;
     }
 
     public String getTenDichVu() {
@@ -25,19 +37,19 @@ public abstract class Facility {
         this.tenDichVu = tenDichVu;
     }
 
-    public double getDienTichThue() {
-        return dienTichThue;
+    public double getDienTichSuDung() {
+        return dienTichSuDung;
     }
 
-    public void setDienTichThue(double dienTichThue) {
-        this.dienTichThue = dienTichThue;
+    public void setDienTichSuDung(double dienTichSuDung) {
+        this.dienTichSuDung = dienTichSuDung;
     }
 
-    public int getChiPhiThue() {
+    public double getChiPhiThue() {
         return chiPhiThue;
     }
 
-    public void setChiPhiThue(int chiPhiThue) {
+    public void setChiPhiThue(double chiPhiThue) {
         this.chiPhiThue = chiPhiThue;
     }
 
@@ -60,8 +72,9 @@ public abstract class Facility {
     @Override
     public String toString() {
         return "Facility{" +
-                "tenDichVu='" + tenDichVu + '\'' +
-                ", dienTichThue=" + dienTichThue +
+                "maDichVu='" + maDichVu + '\'' +
+                ", tenDichVu='" + tenDichVu + '\'' +
+                ", dienTichSuDung=" + dienTichSuDung +
                 ", chiPhiThue=" + chiPhiThue +
                 ", soLuongNguoi=" + soLuongNguoi +
                 ", kieuThue='" + kieuThue + '\'' +
@@ -73,11 +86,16 @@ public abstract class Facility {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Facility facility = (Facility) o;
-        return tenDichVu.equals(facility.tenDichVu);
+        return Double.compare(facility.dienTichSuDung, dienTichSuDung) == 0 &&
+                Double.compare(facility.chiPhiThue, chiPhiThue) == 0 &&
+                soLuongNguoi == facility.soLuongNguoi &&
+                Objects.equals(maDichVu, facility.maDichVu) &&
+                Objects.equals(tenDichVu, facility.tenDichVu) &&
+                Objects.equals(kieuThue, facility.kieuThue);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tenDichVu);
+        return Objects.hash(maDichVu, tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoi, kieuThue);
     }
 }
