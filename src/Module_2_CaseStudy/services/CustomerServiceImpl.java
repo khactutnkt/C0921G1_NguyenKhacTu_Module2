@@ -1,6 +1,7 @@
 package services;
 
 import models.Customer;
+import validate.DateValidation;
 import write_read_file.WriteReadFile;
 
 import java.util.ArrayList;
@@ -16,7 +17,7 @@ public class CustomerServiceImpl implements CustomerService{
         customerList = convertStringToCustomer();
 //        customerList.add(new Customer("Tu", "21/01/1998", "nam", "197415142",
 //                "0969854784", "tu@gmail.com", "KH001", "Diamond", "đà nẵng"));
-//        customerList.add(new Customer("Nguye", "01/01/1995", "nam", "19742547",
+//        customerList.add(new Customer("Nguyen", "01/01/1995", "nam", "19742547",
 //                "0969854784", "tu@gmail.com", "KH002", "Platinium", "sài gòn"));
 //        customerList.add(new Customer("Nhi", "16/06/1998", "nữ", "1974111154",
 //                "0969854784", "tu@gmail.com", "KH003", "Gold", "quảng trị"));
@@ -24,6 +25,7 @@ public class CustomerServiceImpl implements CustomerService{
 
     List<String> stringList;
     Scanner scanner = new Scanner(System.in);
+    DateValidation dateValidation = new DateValidation();
 
     @Override
     public void displayList() {
@@ -39,7 +41,7 @@ public class CustomerServiceImpl implements CustomerService{
         String hoTen = scanner.nextLine();
 
         System.out.println("Nhập ngày sinh:");
-        String ngaySinh = scanner.nextLine();
+        String ngaySinh = dateValidation.nhapNgaySinh();
 
         System.out.println("Nhập giới tính:");
         String gioiTinh = scanner.nextLine();
@@ -65,7 +67,7 @@ public class CustomerServiceImpl implements CustomerService{
         Customer customer = new Customer(hoTen,ngaySinh,gioiTinh,soCMND,soDienThoai,email,maKhachHang,loaiKhach,diaChi);
         customerList.add(customer);
         stringList = convertCustomerToString();
-        WriteReadFile.writeFile(CUSTOMER_FILE_PATH, stringList, true);
+        WriteReadFile.writeFile(CUSTOMER_FILE_PATH, stringList, false);
 
     }
 
@@ -80,7 +82,7 @@ public class CustomerServiceImpl implements CustomerService{
                 customerList.get(i).setHoTen(hoTen);
 
                 System.out.println("Nhập ngày sinh:");
-                String ngaySinh = scanner.nextLine();
+                String ngaySinh = dateValidation.nhapNgaySinh();
                 customerList.get(i).setNgaySinh(ngaySinh);
 
                 System.out.println("Nhập giới tính:");

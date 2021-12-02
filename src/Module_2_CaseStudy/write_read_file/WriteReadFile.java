@@ -34,7 +34,7 @@ public class WriteReadFile {
         File file = new File(path);
         BufferedWriter bw = null;
         try {
-            FileWriter fileWriter = new FileWriter(file);
+            FileWriter fileWriter = new FileWriter(file, append);
             bw = new BufferedWriter(fileWriter);
             for (String line : stringList) {
                 bw.write(line);

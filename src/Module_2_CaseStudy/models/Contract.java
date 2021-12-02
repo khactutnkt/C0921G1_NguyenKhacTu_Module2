@@ -1,38 +1,39 @@
 package models;
 
+import java.util.Objects;
+
 public class Contract {
-    private int soHopDong;
-    private Booking booking;
+    private String soHopDong;
+    private String maBooking;
     private double soTienDatTruoc;
     private double tongTienThanhToan;
-    private Customer customer;
+    private String maKhachHang;
 
     public Contract() {
     }
 
-    public Contract(int soHopDong, Booking maBooking, double soTienDatTruoc,
-                    double tongTienThanhToan, Customer maKhachHangl) {
+    public Contract(String soHopDong, String maBooking, double soTienDatTruoc, double tongTienThanhToan, String maKhachHang) {
         this.soHopDong = soHopDong;
-        this.booking = maBooking;
+        this.maBooking = maBooking;
         this.soTienDatTruoc = soTienDatTruoc;
         this.tongTienThanhToan = tongTienThanhToan;
-        this.customer = maKhachHangl;
+        this.maKhachHang = maKhachHang;
     }
 
-    public int getSoHopDong() {
+    public String getSoHopDong() {
         return soHopDong;
     }
 
-    public void setSoHopDong(int soHopDong) {
+    public void setSoHopDong(String soHopDong) {
         this.soHopDong = soHopDong;
     }
 
-    public Booking getBooking() {
-        return booking;
+    public String getMaBooking() {
+        return maBooking;
     }
 
-    public void setBooking(Booking booking) {
-        this.booking = booking;
+    public void setMaBooking(String maBooking) {
+        this.maBooking = maBooking;
     }
 
     public double getSoTienDatTruoc() {
@@ -51,22 +52,36 @@ public class Contract {
         this.tongTienThanhToan = tongTienThanhToan;
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public String getMaKhachHang() {
+        return maKhachHang;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void setMaKhachHang(String maKhachHang) {
+        this.maKhachHang = maKhachHang;
     }
 
     @Override
     public String toString() {
         return "Contract{" +
                 "soHopDong=" + soHopDong +
-                ", maBooking='" + booking + '\'' +
+                ", maBooking='" + maBooking + '\'' +
                 ", soTienDatTruoc=" + soTienDatTruoc +
                 ", tongTienThanhToan=" + tongTienThanhToan +
-                ", maKhachHangl='" + customer + '\'' +
+                ", maKhachHang='" + maKhachHang + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Contract contract = (Contract) o;
+        return soHopDong == contract.soHopDong &&
+                Objects.equals(maBooking, contract.maBooking);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(soHopDong, maBooking);
     }
 }

@@ -1,21 +1,22 @@
 package models;
 
+import java.util.Objects;
+
 public class Booking {
     private String maBooking;
     private String ngayBatDau;
     private String ngayKetThuc;
-    private Customer customer;
+    private String maKhachHang;
     private String tenDichVu;
     private String maDichVu;
 
     public Booking(){}
 
-    public Booking(String maBooking, String ngayBatDau, String ngayKetThuc,
-                   Customer customer, String tenDichVu, String maDichVu) {
+    public Booking(String maBooking, String ngayBatDau, String ngayKetThuc, String maKhachHang, String tenDichVu, String maDichVu) {
         this.maBooking = maBooking;
         this.ngayBatDau = ngayBatDau;
         this.ngayKetThuc = ngayKetThuc;
-        this.customer = customer;
+        this.maKhachHang = maKhachHang;
         this.tenDichVu = tenDichVu;
         this.maDichVu = maDichVu;
     }
@@ -44,12 +45,12 @@ public class Booking {
         this.ngayKetThuc = ngayKetThuc;
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public String getMaKhachHang() {
+        return maKhachHang;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void setMaKhachHang(String maKhachHang) {
+        this.maKhachHang = maKhachHang;
     }
 
     public String getTenDichVu() {
@@ -74,9 +75,22 @@ public class Booking {
                 "maBooking='" + maBooking + '\'' +
                 ", ngayBatDau='" + ngayBatDau + '\'' +
                 ", ngayKetThuc='" + ngayKetThuc + '\'' +
-                ", customer=" + customer +
+                ", maKhachHang='" + maKhachHang + '\'' +
                 ", tenDichVu='" + tenDichVu + '\'' +
                 ", maDichVu='" + maDichVu + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Booking booking = (Booking) o;
+        return maBooking.equals(booking.maBooking);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(maBooking);
     }
 }

@@ -130,7 +130,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 
         employeeList.add(newEmployee);
         stringList = convertEmployeeToString();
-        WriteReadFile.writeFile(EMPLOYEE_FILE_PATH, stringList, true);
+        WriteReadFile.writeFile(EMPLOYEE_FILE_PATH, stringList, false);
     }
 
     @Override
